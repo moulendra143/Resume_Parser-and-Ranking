@@ -1,0 +1,15 @@
+{
+  "skills": [
+    "Python", "Java", "C++", "C#", "Ruby", "JavaScript", "TypeScript",
+    "Go", "Rust", "PHP", "Swift", "Kotlin", "Scala", "R", "SQL",
+    "HTML", "CSS", "React", "Angular", "Vue", "Node.js", "Express",
+    "Django", "Flask", "Spring Boot", "ASP.NET", "Ruby on Rails",
+    "Machine Learning", "Deep Learning", "TensorFlow", "PyTorch", "Keras",
+    "Scikit-learn", "Pandas", "NumPy", "NLP", "Computer Vision",
+    "AWS", "Azure", "Google Cloud", "GCP", "Docker", "Kubernetes",
+    "Terraform", "Ansible", "Jenkins", "Git", "GitHub", "GitLab",
+    "CI/CD", "Linux", "Bash", "Agile", "Scrum", "REST", "GraphQL",
+    "MySQL", "PostgreSQL", "MongoDB", "Redis", "Elasticsearch",
+    "Apache Spark", "Hadoop", "Kafka"
+  ]
+}

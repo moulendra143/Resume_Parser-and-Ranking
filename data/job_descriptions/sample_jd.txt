@@ -1,0 +1,4 @@
+Looking for a Software Engineer with at least 3 years of experience.
+Must have strong skills in Python, SQL, and AWS.
+Experience with Machine Learning and Deep Learning is a big plus.
+A Bachelor of Science in Computer Science or related field is required.

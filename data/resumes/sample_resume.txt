@@ -1,0 +1,16 @@
+John Doe
+Software Developer
+
+Experience
+Software Engineer - Tech Corp
+2020 - Present (4 years)
+Developed backend APIs using Python and Django.
+Managed databases using SQL and PostgreSQL.
+Deployed applications on AWS.
+
+Education
+Bachelor of Science in Computer Science
+University of Technology, 2019
+
+Skills
+Python, Java, SQL, AWS, Machine Learning, Git, Linux
