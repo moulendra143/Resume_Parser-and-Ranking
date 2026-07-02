@@ -54,7 +54,7 @@ st.markdown("""
     }
     
     /* Set main font and background */
-    html, body, [class*="st-"] {
+    html, body, .stApp {
         font-family: 'Plus Jakarta Sans', sans-serif;
         background-color: #fafafa;
         color: #1f2937;
@@ -146,18 +146,22 @@ st.markdown("""
         font-family: 'Plus Jakarta Sans', sans-serif !important;
     }
     
-    /* Textarea clean style */
-    div[data-element-type="textarea"] textarea {
-        border: 1px solid #d1d5db !important;
+    /* Textarea clean style — white background, dark text */
+    div[data-element-type="textarea"] textarea,
+    .stTextArea textarea {
+        border: 1.5px solid #c7d2fe !important;
         border-radius: 10px !important;
         background-color: #ffffff !important;
+        color: #1f2937 !important;
         font-size: 0.95rem !important;
         padding: 12px !important;
         transition: border-color 0.2s ease;
     }
-    div[data-element-type="textarea"] textarea:focus {
+    div[data-element-type="textarea"] textarea:focus,
+    .stTextArea textarea:focus {
         border-color: #6366f1 !important;
-        box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1) !important;
+        box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12) !important;
+        outline: none !important;
     }
 
     /* Primary button style */
@@ -267,7 +271,7 @@ with st.container(border=True):
     # 2. Upload Resume Field
     st.markdown('<div class="input-label">📁 Step 2: Upload Candidate Resume</div>', unsafe_allow_html=True)
     uploaded_file = st.file_uploader(
-        "",
+        "Upload Resume",
         type=["pdf", "docx", "txt"],
         label_visibility="collapsed"
     )

@@ -17,15 +17,15 @@ run-batch:
 
 # Start the FastAPI REST server
 api:
-	uvicorn src.api:app --reload --port 8000
+	python -m uvicorn src.api:app --reload --port 8000
 
 # Start the Streamlit demo UI
 streamlit:
-	streamlit run src/app.py
+	python -m streamlit run src/app.py
 
 # Run all unit tests
 test:
-	pytest tests/ -v
+	python -m pytest tests/ -v
 
 # Lint with flake8
 lint:

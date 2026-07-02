@@ -208,7 +208,15 @@ async def sandbox_contact(text: str = Form(...)):
     return {"contact": contact}
 
 
-# Serve Frontend static assets
+# Serve Frontend static assets if directory exists
 static_dir = "frontend/dist" if os.path.exists("frontend/dist") else "frontend"
-app.mount("/", StaticFiles(directory=static_dir, html=True), name="frontend")
+if os.path.exists(static_dir):
+    app.mount("/", StaticFiles(directory=static_dir, html=True), name="frontend")
+else:
+    @app.get("/")
+    async def index():
+        return {
+            "status": "ok",
+            "message": "FastAPI Resume Screening & Ranking Server is running. (Frontend folder is excluded as out-of-scope)."
+        }
 

@@ -7,9 +7,20 @@ from src.features.education_extractor import extract_education
 from src.features.contact_extractor import extract_contact_info
 
 
+SAMPLE_ALIASES = {
+    "ml": "Machine Learning",
+    "dl": "Deep Learning",
+    "js": "JavaScript",
+    "k8s": "Kubernetes",
+    "sklearn": "Scikit-learn",
+    "reactjs": "React",
+    "nodejs": "Node.js",
+}
+
+
 SAMPLE_TAXONOMY = [
     "Python", "Java", "SQL", "AWS", "Machine Learning",
-    "Docker", "React", "Git", "Linux", "C++",
+    "Docker", "React", "Git", "Linux", "C++", "JavaScript",
 ]
 
 
@@ -68,6 +79,36 @@ class TestExperienceExtractor:
         result = extract_experience(text)
         assert result == 0.0
 
+    def test_ignores_age_false_positive(self):
+        """'10 years old' must not be detected as professional experience."""
+        text = "I am 28 years old and a recent graduate"
+        result = extract_experience(text)
+        assert result == 0.0
+
+    def test_ignores_years_ago_false_positive(self):
+        """'10 years ago' must not be detected as professional experience."""
+        text = "The company was founded 10 years ago and has grown rapidly"
+        result = extract_experience(text)
+        assert result == 0.0
+
+    def test_mixed_text_picks_correct_value(self):
+        """With both a false-positive and a real experience mention, return only the real one."""
+        text = "I am 25 years old with 3 years of experience in Python"
+        result = extract_experience(text)
+        assert result == 3.0
+
+    def test_contextual_at_company(self):
+        """'N years at <Company>' should be detected as experience."""
+        text = "Worked 4 years at Google and 2 years at Amazon"
+        result = extract_experience(text)
+        assert result == 4.0
+
+    def test_tech_domain_context(self):
+        """'N years in software/data/ML' should match."""
+        text = "5 years in machine learning and data science"
+        result = extract_experience(text)
+        assert result == 5.0
+
 
 class TestEducationExtractor:
     """Tests for regex-based education extraction."""
@@ -93,6 +134,35 @@ class TestEducationExtractor:
         text = "I like hiking and cooking"
         result = extract_education(text)
         assert result == []
+
+
+class TestSkillsExtractorAliases:
+    """Tests for alias-based skill resolution in the skills extractor."""
+
+    def test_ml_alias_resolves_to_machine_learning(self):
+        text = "Experienced in ML and data science"
+        result = extract_skills(text, SAMPLE_TAXONOMY, SAMPLE_ALIASES)
+        assert "Machine Learning" in result
+
+    def test_js_alias_resolves_to_javascript(self):
+        text = "Proficient in JS and frontend development"
+        result = extract_skills(text, SAMPLE_TAXONOMY, SAMPLE_ALIASES)
+        assert "JavaScript" in result
+
+    def test_alias_does_not_duplicate_canonical_match(self):
+        """If 'Machine Learning' is already matched directly, ML alias must not add a duplicate."""
+        text = "Machine Learning and ML engineering"
+        result = extract_skills(text, SAMPLE_TAXONOMY, SAMPLE_ALIASES)
+        count = result.count("Machine Learning")
+        assert count == 1
+
+    def test_alias_and_direct_match_combined(self):
+        """Both canonical and alias-resolved skills should appear together."""
+        text = "Python developer with ML and Docker experience"
+        result = extract_skills(text, SAMPLE_TAXONOMY, SAMPLE_ALIASES)
+        assert "Python" in result          # direct match
+        assert "Machine Learning" in result  # alias 'ml'
+        assert "Docker" in result           # direct match
 
 
 class TestContactExtractor:
