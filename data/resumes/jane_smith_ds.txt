@@ -1,0 +1,24 @@
+Jane Smith
+Data Scientist
+
+Experience
+Senior Data Scientist - DataCorp Inc.
+2018 - Present (6 years)
+Built machine learning pipelines using Python and Scikit-learn.
+Developed NLP models for text classification and sentiment analysis.
+Deployed ML models on AWS using Docker containers.
+
+Junior Data Analyst - Analytics Ltd.
+2016 - 2018 (2 years)
+Performed data analysis using Pandas and SQL.
+Created dashboards and reports using matplotlib.
+
+Education
+Master of Science in Data Science
+Stanford University, 2016
+
+Bachelor of Science in Mathematics
+UC Berkeley, 2014
+
+Skills
+Python, Machine Learning, Deep Learning, NLP, TensorFlow, PyTorch, Scikit-learn, Pandas, NumPy, SQL, AWS, Docker, Git, Linux

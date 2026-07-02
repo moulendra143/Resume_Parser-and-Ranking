@@ -1,0 +1,20 @@
+Alex Johnson
+Frontend Developer
+
+Experience
+Frontend Developer - WebDesign Co.
+2021 - Present (3 years)
+Built responsive web applications using React and TypeScript.
+Implemented REST APIs integration with the backend team.
+Used Git and GitHub for version control.
+
+Intern - StartupXYZ
+2020 - 2021 (1 year)
+Assisted in building UI components using HTML, CSS, and JavaScript.
+
+Education
+Bachelor of Science in Information Technology
+State University, 2020
+
+Skills
+JavaScript, TypeScript, React, HTML, CSS, Node.js, Git, GitHub, REST, Agile

@@ -1,0 +1,34 @@
+# Application Configuration
+
+app:
+  name: "Resume Screening & Ranking System"
+  version: "1.0.0"
+
+# Paths
+paths:
+  skills_taxonomy: "config/skills_taxonomy.json"
+  resumes_dir: "data/resumes"
+  job_descriptions_dir: "data/job_descriptions"
+  model_path: "model.joblib"
+
+# Similarity Settings
+similarity:
+  # Model used for sentence embeddings
+  embedding_model: "all-MiniLM-L6-v2"
+  # Weight for embedding score in hybrid similarity (0.0 - 1.0)
+  embedding_weight: 0.7
+
+# ML Ranking Settings
+ranking:
+  # Number of trees in the Random Forest
+  n_estimators: 100
+  random_seed: 42
+  # Synthetic training data size (used when no real data is available)
+  synthetic_samples: 1000
+
+# Scoring Weights (for heuristic fallback)
+scoring_weights:
+  similarity: 0.60
+  skills: 0.20
+  experience: 0.10
+  education: 0.10

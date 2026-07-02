@@ -1,0 +1,24 @@
+Priya Patel
+ML Engineer
+
+Experience
+Machine Learning Engineer - AI Solutions
+2019 - Present (5 years)
+Designed and deployed deep learning models using PyTorch and TensorFlow.
+Built end-to-end ML pipelines on Google Cloud with Kubernetes and Docker.
+Implemented computer vision systems for object detection.
+
+Research Assistant - University ML Lab
+2017 - 2019 (2 years)
+Published 3 papers on NLP and deep learning techniques.
+Developed custom NLP models using Python and spaCy.
+
+Education
+Ph.D in Computer Science (Machine Learning)
+MIT, 2019
+
+Master of Science in Computer Science
+IIT Delhi, 2017
+
+Skills
+Python, Machine Learning, Deep Learning, TensorFlow, PyTorch, Keras, NLP, Computer Vision, Google Cloud, GCP, Docker, Kubernetes, Scikit-learn, Pandas, NumPy, Git, Linux, SQL, Apache Spark
